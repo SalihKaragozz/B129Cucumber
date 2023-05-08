@@ -15,15 +15,17 @@ senaryoyu çalıştırabiliriz
 //Cucumber ile JUnit'in entegre olmasını sağlayan test çalıştırıcı notasyonudur
 @RunWith(Cucumber.class)
 //Seneryoların nerede ve nasıl çalışacağı, hangi raporu kullanacağıyla alakalı seçenekleri ayarlarız
-@CucumberOptions(features = "src/test/resources/features/day30_IlkFeature",
+@CucumberOptions(features = "src/test/resources/features/",
         glue = {"techproed/stepDefinitions"},//Bu parametre ile kodlarımızı yazdığımız stepDefinition
         //class'ının packege'ını belirtiriz
-        tags = "@gr1 or @gr3"  )
+        tags = "@DataTable" ,
+        dryRun = false    )
 
 /*
 features ===> features'ların olduğu packega nın yolunu ver(ContentRoot)
 glue ====> stepDefinition'ların olduğu packega nın yolunu ver(Source Root)
 tags ====> çalıştırmak istediğin grubu yaz
+dryRun = true ===> Missining step definitionsn(Eksik) tespiti için kullanılır testi çalıştırmaz
  */
 
 public class Runner {
