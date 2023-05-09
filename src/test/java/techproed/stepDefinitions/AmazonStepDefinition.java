@@ -18,7 +18,9 @@ public class AmazonStepDefinition {
         amazonPage.aramaKutusu.sendKeys("iphone", Keys.ENTER);
     }
     @And("sayfayi_kapatir")
-    public void sayfayi_kapatir() {
+    public void sayfayi_kapatir() throws InterruptedException {
+
+        Thread.sleep(3000);
         Driver.closeDriver();
     }
     @And("arama_kutusunda_Selenium_aratir")
