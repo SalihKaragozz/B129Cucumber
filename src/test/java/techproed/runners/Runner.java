@@ -1,7 +1,9 @@
 package techproed.runners;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
+
 /*
 Runner class; testNG deki .xml file larda belirttiğimiz class'ları,packageları veya methodları nasıl
 çalıştırıyorsak, Cucumber frameworkundede Runner class'ındaki tags parametresi ile belirttiğimiz
@@ -12,21 +14,17 @@ senaryoyu çalıştırabiliriz
 //Seneryoların nerede ve nasıl çalışacağı, hangi raporu kullanacağıyla alakalı seçenekleri ayarlarız
 @CucumberOptions(
         plugin = {
-                "pretty", // konsolu renklendirir
+                "pretty", //Konsolu renklendirir
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"
-
-
-
         },
 
-
-        monochrome = true, // konsolu okunaklı hale getirir
+        monochrome = false, //Konsolu okunaklı hale getirir!
         features = "src/test/resources/features",
-        glue = {"techproed/stepDefinitions"},//Bu parametre ile kodlarımızı yazdığımız stepDefinition
+        glue = {"techproed/stepDefinitions", "techproed/hooks"},//Bu parametre ile kodlarımızı yazdığımız stepDefinition
         //class'ının packege'ını belirtiriz
-        tags = "@MedunnaRoom",
+        tags = "@BlueRentalCarDataTableMap",
         dryRun = false
 )
 /*

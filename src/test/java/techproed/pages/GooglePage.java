@@ -1,5 +1,6 @@
 package techproed.pages;
 
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,4 +15,9 @@ public class GooglePage {
     @FindBy(name = "q")
     public WebElement aramaKutusu;
 
-}
+
+
+    }
+
+
+
